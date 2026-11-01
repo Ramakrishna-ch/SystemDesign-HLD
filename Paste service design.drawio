@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="cKHHNnvWlAuITnP91QNx">
-    <mxGraphModel dx="1378" dy="662" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1269" dy="539" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -100,11 +100,19 @@
         <mxCell id="ukKPymGoxakO6xEEOk9w-27" parent="1" style="aspect=fixed;html=1;align=center;shadow=0;dashed=0;fillColor=#FF6A00;strokeColor=none;shape=mxgraph.alibaba_cloud.mq_message_queue;" value="" vertex="1">
           <mxGeometry height="49.8" width="45" x="650" y="408" as="geometry" />
         </mxCell>
-        <mxCell id="ukKPymGoxakO6xEEOk9w-28" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="An optional Mq if data write thoughput increases" vertex="1">
-          <mxGeometry height="30" width="150" x="620" y="378" as="geometry" />
-        </mxCell>
         <mxCell id="ukKPymGoxakO6xEEOk9w-29" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="Architecture Design" vertex="1">
-          <mxGeometry height="420" width="1120" x="20" y="370" as="geometry" />
+          <mxGeometry height="420" width="1120" x="20" y="370" as="geometry">
+            <mxRectangle height="30" width="150" x="20" y="370" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ukKPymGoxakO6xEEOk9w-28" parent="ukKPymGoxakO6xEEOk9w-29" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="An optional Mq if data write thoughput increases" vertex="1">
+          <mxGeometry height="30" width="150" x="595" y="87.8" as="geometry" />
+        </mxCell>
+        <mxCell id="OO_AXkMir4CHDQAmzkzZ-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="&lt;div&gt;CAP:&lt;br&gt;Parition: needed cause when we scale to massive load system goes segregates&lt;/div&gt;&lt;div&gt;Availability: when part fails, some of the users may get the creates and reads from other available systems else error is shown.&lt;/div&gt;&lt;div&gt;Consistency: multiple ways of implementation there like if info is single replica not many then consistency wont matter, else users may see older data. if consistency imp then writes status must be shown to user if it is successful or not. also content hashing might be considered when dealing with diff in local and stored one, diff version when last save failed but local has updated content and user access same url somewhere else.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="450" x="400" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OO_AXkMir4CHDQAmzkzZ-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="Text size limit: Initially data limit can be considered based on API req payload size which is dependency on server limits like 2mb for tomcat etc. so for this size limit mongo is enough. but we go large sizes write strategy changes like stream or upload and storage option jumps to s3 like ones. for faster retrieval we can use cdn for frequently accessed content with unique id as key.&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Using s3 or CDN like systems wont put much stress on read service memory cause content is directly served from s3 to browser.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="450" x="400" y="205" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

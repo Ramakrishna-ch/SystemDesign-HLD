@@ -119,10 +119,10 @@
             <mxRectangle height="30" width="150" x="20" y="370" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="rG6B3M27jz7WGy7WSxZI-3" parent="rG6B3M27jz7WGy7WSxZI-1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;align=left;" value="&lt;div&gt;CREATE PASTE:&lt;/div&gt;&lt;div&gt;POST /save?{uniqueID - optional, for updating saved content}&lt;/div&gt;&lt;div&gt;Payload: {content}&lt;/div&gt;&lt;div&gt;Response messages: Success, Internal error, Bad Input(Invalid id), Size limit exceeded&lt;/div&gt;" vertex="1">
+        <mxCell id="rG6B3M27jz7WGy7WSxZI-3" parent="rG6B3M27jz7WGy7WSxZI-1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;align=left;" value="&lt;div&gt;CREATE PASTE:&lt;/div&gt;&lt;div&gt;POST /save&lt;/div&gt;&lt;div&gt;Payload: {content}&lt;/div&gt;&lt;div&gt;Response Body: {UniqueId, Full URL, Expiry}&lt;/div&gt;&lt;div&gt;Response messages: Success, Internal error, Bad Input(Invalid id), Size limit exceeded&lt;/div&gt;" vertex="1">
           <mxGeometry height="130" width="1100" x="10" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="rG6B3M27jz7WGy7WSxZI-4" parent="rG6B3M27jz7WGy7WSxZI-1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;align=left;" value="&lt;div&gt;RETRIEVE PASTE:&lt;/div&gt;&lt;div&gt;GET /{uniqueID - mandatory}&lt;/div&gt;&lt;div&gt;Payload: None&lt;br&gt;Response Body: plain or encoded content text&lt;/div&gt;&lt;div&gt;Response messages: Success, Internal error, Bad Input(Invalid id)&lt;/div&gt;" vertex="1">
+        <mxCell id="rG6B3M27jz7WGy7WSxZI-4" parent="rG6B3M27jz7WGy7WSxZI-1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;align=left;" value="&lt;div&gt;RETRIEVE PASTE:&lt;/div&gt;&lt;div&gt;GET /{uniqueID - mandatory}&lt;/div&gt;&lt;div&gt;Payload: None&lt;br&gt;Response Body: plain or encoded content text, expiry&lt;/div&gt;&lt;div&gt;Response messages: Success, Internal error, Bad Input(Invalid id)&lt;/div&gt;" vertex="1">
           <mxGeometry height="130" width="1100" x="10" y="200" as="geometry" />
         </mxCell>
         <mxCell id="rG6B3M27jz7WGy7WSxZI-5" parent="1" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" value="Data Model" vertex="1">
@@ -131,7 +131,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="rG6B3M27jz7WGy7WSxZI-8" parent="rG6B3M27jz7WGy7WSxZI-5" style="shape=table;tableRender=collapsed;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=0;strokeColor=default;fontSize=16;" value="Contents" vertex="1">
-          <mxGeometry height="225" width="233" x="77" y="50" as="geometry" />
+          <mxGeometry height="150" width="233" x="77" y="50" as="geometry" />
         </mxCell>
         <mxCell id="rG6B3M27jz7WGy7WSxZI-9" parent="rG6B3M27jz7WGy7WSxZI-8" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;" value="" vertex="1">
           <mxGeometry height="30" width="233" y="30" as="geometry" />
@@ -172,30 +172,23 @@
             <mxRectangle height="30" width="181" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="rG6B3M27jz7WGy7WSxZI-18" parent="rG6B3M27jz7WGy7WSxZI-5" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;overflow=hidden;strokeColor=inherit;fontSize=16;" value="4" vertex="1">
-          <mxGeometry height="30" width="40" x="85" y="170" as="geometry">
-            <mxRectangle height="30" width="40" as="alternateBounds" />
+        <mxCell id="rG6B3M27jz7WGy7WSxZI-43" parent="rG6B3M27jz7WGy7WSxZI-8" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="30" width="233" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="rG6B3M27jz7WGy7WSxZI-44" parent="rG6B3M27jz7WGy7WSxZI-43" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;overflow=hidden;strokeColor=inherit;fontSize=16;" value="4" vertex="1">
+          <mxGeometry height="30" width="52" as="geometry">
+            <mxRectangle height="30" width="52" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="rG6B3M27jz7WGy7WSxZI-19" parent="rG6B3M27jz7WGy7WSxZI-5" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" value="updated_at" vertex="1">
-          <mxGeometry height="30" width="180" x="130" y="170" as="geometry">
-            <mxRectangle height="30" width="140" as="alternateBounds" />
+        <mxCell id="rG6B3M27jz7WGy7WSxZI-45" parent="rG6B3M27jz7WGy7WSxZI-43" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" value="expiry datetime" vertex="1">
+          <mxGeometry height="30" width="181" x="52" as="geometry">
+            <mxRectangle height="30" width="181" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="rG6B3M27jz7WGy7WSxZI-33" parent="rG6B3M27jz7WGy7WSxZI-5" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;overflow=hidden;strokeColor=inherit;fontSize=16;" value="5" vertex="1">
-          <mxGeometry height="40" width="40" x="77" y="200" as="geometry">
-            <mxRectangle height="30" width="40" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rG6B3M27jz7WGy7WSxZI-34" parent="rG6B3M27jz7WGy7WSxZI-5" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" value="UniqueId(If default mongo collection uuid is not used)" vertex="1">
-          <mxGeometry height="63.4" width="193" x="117" y="200" as="geometry">
-            <mxRectangle height="30" width="140" as="alternateBounds" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="rG6B3M27jz7WGy7WSxZI-39" parent="rG6B3M27jz7WGy7WSxZI-5" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Id or UniqueId columns are indexed for faster retrival using id from url" vertex="1">
+        <mxCell id="rG6B3M27jz7WGy7WSxZI-39" parent="rG6B3M27jz7WGy7WSxZI-5" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Id columns are indexed for faster retrival using id from url" vertex="1">
           <mxGeometry height="30" width="233" x="77" y="290" as="geometry" />
         </mxCell>
-        <mxCell id="rG6B3M27jz7WGy7WSxZI-40" parent="rG6B3M27jz7WGy7WSxZI-5" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Gaps: Yet to think about S3 store model, expiry strategy with TTL cause above model is manually evicted using created or updated time" vertex="1">
+        <mxCell id="rG6B3M27jz7WGy7WSxZI-40" parent="rG6B3M27jz7WGy7WSxZI-5" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Gaps: Yet to think about S3 store model, expiry strategy with TTL cause above model is manually evicted using expiry datetime" vertex="1">
           <mxGeometry height="63.4" width="300" x="77" y="320" as="geometry" />
         </mxCell>
       </root>

@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="cKHHNnvWlAuITnP91QNx">
-    <mxGraphModel dx="1488" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="982" dy="551" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -190,6 +190,17 @@
         </mxCell>
         <mxCell id="rG6B3M27jz7WGy7WSxZI-40" parent="rG6B3M27jz7WGy7WSxZI-5" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Gaps: Yet to think about S3 store model, expiry strategy with TTL cause above model is manually evicted using expiry datetime" vertex="1">
           <mxGeometry height="63.4" width="300" x="77" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="Xi7nuhJACxG9oOiBqUeF-1" parent="1" style="swimlane;whiteSpace=wrap;html=1;startSize=23;" value="Storage Decision" vertex="1">
+          <mxGeometry height="420" width="440" x="20" y="1350" as="geometry">
+            <mxRectangle height="30" width="150" x="20" y="370" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Xi7nuhJACxG9oOiBqUeF-17" parent="Xi7nuhJACxG9oOiBqUeF-1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;align=left;" value="&lt;div align=&quot;left&quot;&gt;MONGO:&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;Mongo is a good start for this system as we have less data models initially and data size is also limited, so even if new models or schema(like edit, user auth etc) changes comes mongo can handle that smoothly without major migrations, scalability can also be handled with minimal effort like cluster or atlas if scale is massive.&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="420" x="10" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Xi7nuhJACxG9oOiBqUeF-18" parent="Xi7nuhJACxG9oOiBqUeF-1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;align=left;" value="&lt;div align=&quot;left&quot;&gt;AWS S3:&lt;/div&gt;S3 is majorly for content storage when data size grows, reduce read serve overhead on read service and cdn, public accessibility. even though we go for s3, we need some sql or nosql db for config data like url, user etc.&lt;div align=&quot;left&quot;&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="420" x="10" y="210" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

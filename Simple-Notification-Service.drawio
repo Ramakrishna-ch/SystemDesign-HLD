@@ -1,11 +1,11 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="B_gI73PVFMhVYvZouSin">
-    <mxGraphModel dx="2361" dy="318" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="5235" dy="1985" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="QraYAclZEzJIQZ27hCRr-1" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="Architecture design V1" vertex="1">
-          <mxGeometry height="870" width="1750" x="-1030" y="220" as="geometry" />
+          <mxGeometry height="830" width="1790" x="-1030" y="220" as="geometry" />
         </mxCell>
         <mxCell id="QraYAclZEzJIQZ27hCRr-2" parent="QraYAclZEzJIQZ27hCRr-1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Order Service" vertex="1">
           <mxGeometry height="130" width="130" x="60" y="60" as="geometry" />
@@ -211,6 +211,23 @@
         </mxCell>
         <mxCell id="cq33HGMz5ihR9UeokXTA-1" parent="QraYAclZEzJIQZ27hCRr-1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;align=left;" value="&lt;div align=&quot;left&quot;&gt;&lt;b&gt;Message contracts for workers from Dispatcher:&lt;/b&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;Email: {messageId, userId, recipient email, messageContent}&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;SMS: {messageId, userId, phoneNumber, messageContent}&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;Push: {messageId, userId, recipients[{deviceId, tokens},...], messageContent}&lt;/div&gt;&lt;/div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="100" width="460" x="750" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="cq33HGMz5ihR9UeokXTA-4" parent="QraYAclZEzJIQZ27hCRr-1" style="swimlane;whiteSpace=wrap;html=1;" value="Notification DB" vertex="1">
+          <mxGeometry height="215" width="300" x="1380" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="cq33HGMz5ihR9UeokXTA-2" parent="cq33HGMz5ihR9UeokXTA-4" style="swimlane;whiteSpace=wrap;html=1;" value="Notification" vertex="1">
+          <mxGeometry height="130" width="90" x="30" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="cq33HGMz5ihR9UeokXTA-5" parent="cq33HGMz5ihR9UeokXTA-2" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;notification_id&lt;/div&gt;&lt;div&gt;user_id&lt;/div&gt;&lt;div&gt;event_id&lt;/div&gt;&lt;div&gt;notify type&lt;/div&gt;&lt;div&gt;created_at&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="90" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cq33HGMz5ihR9UeokXTA-7" parent="cq33HGMz5ihR9UeokXTA-4" style="swimlane;whiteSpace=wrap;html=1;" value="NotificationDelivery" vertex="1">
+          <mxGeometry height="130" width="120" x="150" y="50" as="geometry">
+            <mxRectangle height="30" width="150" x="150" y="70" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cq33HGMz5ihR9UeokXTA-8" parent="cq33HGMz5ihR9UeokXTA-7" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;delivery_id&lt;/div&gt;&lt;div&gt;notification_id&lt;/div&gt;&lt;div&gt;channel&lt;/div&gt;&lt;div&gt;recipient&lt;/div&gt;&lt;div&gt;publish_status&lt;/div&gt;&lt;div&gt;delivery_status&lt;/div&gt;&lt;div&gt;retry_count&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="90" x="10" y="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
